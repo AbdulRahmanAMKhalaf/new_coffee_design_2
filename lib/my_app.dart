@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'home_screen/home_screen_view/home_screen_view.dart';
-import 'item_screen/item_screen_content/item_screen_content.dart';
+import 'on_bourding_screen/on_bourding_screen_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
         return const MaterialApp(
           title: 'Flutter Demo',
           debugShowCheckedModeBanner: false,
-          home: HomeScreenView(),
+          home: OnBourdingScreenView(),
         );
       },
     );
