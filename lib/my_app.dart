@@ -1,6 +1,6 @@
+import 'package:coffee_design_2/splash_screen/splash_Screen_view.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-import 'on_bourding_screen/on_bourding_screen_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         return const MaterialApp(
           title: 'Flutter Demo',
           debugShowCheckedModeBanner: false,
-          home: OnBourdingScreenView(),
+          home: SplashScreenView(),
         );
       },
     );
