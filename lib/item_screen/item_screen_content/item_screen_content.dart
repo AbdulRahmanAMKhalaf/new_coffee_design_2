@@ -50,20 +50,20 @@ class ItemScreenContent extends StatelessWidget {
               ),
               SizedBox(width: 5.w,),
               Expanded(
-                child: Container(
-                  width: double.infinity,
-                  height: double.infinity,
-                  decoration: BoxDecoration(
-                    color: HexColor('#FEA252'),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Center(
-                    child: TextButton(
-                      onPressed: (){},
+                child: InkWell(
+                  onTap: () {},
+                  child: Container(
+                    width: double.infinity,
+                    height: double.infinity,
+                    decoration: BoxDecoration(
+                      color: HexColor('#FEA252'),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Center(
                       child: Text(
                         'Buy Now',
                         style: TextStyle(
-                            fontSize: 40.px,
+                            fontSize: 30.px,
                             color: Colors.white,
                             fontWeight: FontWeight.w500
                         ),
