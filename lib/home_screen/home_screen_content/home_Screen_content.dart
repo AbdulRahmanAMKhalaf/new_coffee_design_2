@@ -17,7 +17,7 @@ class HomeScreenContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(),
+             SizedBox(height: 3.h,),
             /// ' find the best ......'
             const Text(
               'Find the best\ncoffee for you',
@@ -82,7 +82,7 @@ class HomeScreenContent extends StatelessWidget {
                   itemCount: coffeeType.length),
             ),
             SizedBox(
-              height: 2.h,
+              height: 4.h,
             ),
             CarouselSlider.builder(
                 itemCount: 5,
@@ -100,11 +100,14 @@ class HomeScreenContent extends StatelessWidget {
                     height: 38.h,
                     decoration: BoxDecoration(
                       color: Colors.white70.withOpacity(.1),
-                      gradient: SweepGradient(colors: [
-                        Colors.black26.withOpacity(1),
+                      gradient: LinearGradient(colors: [
                         Colors.grey.shade100,
+                          Colors.grey.shade500,
                         Colors.grey.shade200,
-                      ]),
+                      ],
+                      begin: Alignment.topLeft,
+                        end: Alignment.bottomRight
+                      ),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Padding(
