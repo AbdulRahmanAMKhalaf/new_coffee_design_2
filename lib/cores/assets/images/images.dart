@@ -1,4 +1,5 @@
 abstract class Images{
+  static String splashImage='https://lottie.host/8146acff-7a8e-46a1-9843-4bffc5af1759/KYMgejRDj8.json';
   static String bourdingImage1='https://images.pexels.com/photos/977878/pexels-photo-977878.jpeg?auto=compress&cs=tinysrgb&w=600';
   static String bourdingImage2='https://images.pexels.com/photos/2638019/pexels-photo-2638019.jpeg?auto=compress&cs=tinysrgb&w=600';
   static String bourdingImage3='https://images.pexels.com/photos/893509/pexels-photo-893509.jpeg?auto=compress&cs=tinysrgb&w=600';
