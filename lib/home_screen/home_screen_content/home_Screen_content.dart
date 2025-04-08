@@ -10,56 +10,60 @@ class HomeScreenContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding:EdgeInsets.symmetric(horizontal: 10.0.px),
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-             SizedBox(height: 3.h,),
-            /// ' find the best ......'
-            const Text(
-              'Find the best\ncoffee for you',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w500,
-                fontSize: 40,
-              ),
+    return ListView(
+      padding: EdgeInsets.all(3.w),
+      children: [
+        SizedBox(
+          height: 3.h,
+        ),
+
+        /// ' find the best ......'
+        const Text(
+          'Find the best\ncoffee for you',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w500,
+            fontSize: 40,
+          ),
+        ),
+        SizedBox(
+          height: 2.h,
+        ),
+
+        /// Text form field
+        TextFormField(
+          decoration: InputDecoration(
+            filled: true,
+            fillColor: Colors.white10.withOpacity(.13),
+            hintText: 'Find your coffee...',
+            hintStyle: TextStyle(
+              color: Colors.grey.shade500,
+              fontSize: 15.px,
             ),
-            SizedBox(
-              height: 2.h,
+            prefixIcon: Icon(
+              Icons.search,
+              color: Colors.grey.shade500,
+              size: 30,
             ),
-            /// Text form field
-            TextFormField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white10.withOpacity(.13),
-                hintText: 'Find your coffee...',
-                hintStyle: TextStyle(
-                  color: Colors.grey.shade500,
-                  fontSize: 15.px,
-                ),
-                prefixIcon: Icon(
-                  Icons.search,
-                  color: Colors.grey.shade500,
-                  size: 30,
-                ),
-                border: UnderlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
+            border: UnderlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
             ),
-            SizedBox(height: 1.h,),
-            SizedBox(
-              height: 2.h,
-            ),
-            /// type of coffee list
-            SizedBox(
-              height: 6.h,
-              child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => InkWell(
+          ),
+        ),
+        SizedBox(
+          height: 1.h,
+        ),
+        SizedBox(
+          height: 2.h,
+        ),
+
+        /// type of coffee list
+        SizedBox(
+          height: 6.h,
+          child: ListView.separated(
+              shrinkWrap: true,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => InkWell(
                     onTap: () {},
                     splashColor: Colors.black,
                     splashFactory: NoSplash.splashFactory,
@@ -76,23 +80,23 @@ class HomeScreenContent extends StatelessWidget {
                       ],
                     ),
                   ),
-                  separatorBuilder: (context, index) => SizedBox(
+              separatorBuilder: (context, index) => SizedBox(
                     width: 5.w,
                   ),
-                  itemCount: coffeeType.length),
-            ),
-            SizedBox(
-              height: 4.h,
-            ),
-            CarouselSlider.builder(
-                itemCount: 5,
-                itemBuilder: (context, index, realIndex) => InkWell(
+              itemCount: coffeeType.length),
+        ),
+        SizedBox(
+          height: 2.h,
+        ),
+        CarouselSlider.builder(
+            itemCount: 5,
+            itemBuilder: (context, index, realIndex) => InkWell(
                   onTap: () {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder:(context) => const ItemScreenView(),
-                        ),
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ItemScreenView(),
+                      ),
                     );
                   },
                   child: Container(
@@ -102,12 +106,9 @@ class HomeScreenContent extends StatelessWidget {
                       color: Colors.white70.withOpacity(.1),
                       gradient: LinearGradient(colors: [
                         Colors.grey.shade100,
-                          Colors.grey.shade500,
+                        Colors.grey.shade500,
                         Colors.grey.shade200,
-                      ],
-                      begin: Alignment.topLeft,
-                        end: Alignment.bottomRight
-                      ),
+                      ], begin: Alignment.topLeft, end: Alignment.bottomRight),
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Padding(
@@ -144,7 +145,7 @@ class HomeScreenContent extends StatelessWidget {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         mainAxisAlignment:
-                                        MainAxisAlignment.end,
+                                            MainAxisAlignment.end,
                                         children: [
                                           Icon(
                                             Icons.star,
@@ -164,6 +165,7 @@ class HomeScreenContent extends StatelessWidget {
                                   ),
                                 ],
                               )),
+
                           /// coffee type
                           Text(
                             'Cuppuccino',
@@ -172,6 +174,7 @@ class HomeScreenContent extends StatelessWidget {
                                 fontSize: 30.px,
                                 fontWeight: FontWeight.w600),
                           ),
+
                           /// with ....
                           Text(
                             'with Oat milk',
@@ -181,6 +184,10 @@ class HomeScreenContent extends StatelessWidget {
                                 fontWeight: FontWeight.w600,
                                 wordSpacing: -2),
                           ),
+                          SizedBox(
+                            height: 4,
+                          ),
+
                           /// price
                           Row(
                             children: [
@@ -223,17 +230,17 @@ class HomeScreenContent extends StatelessWidget {
                     ),
                   ),
                 ),
-                options: CarouselOptions(
-                  viewportFraction: 0.65,
-                  aspectRatio: 0.96,
-                  scrollDirection: Axis.horizontal,
-                  initialPage: 0,
-                  enableInfiniteScroll: true,
-                  enlargeCenterPage: true,
-                )),
-          ],
-        ),
-      ),
+            options: CarouselOptions(
+              viewportFraction: 0.65,
+              height: 50.h,
+              aspectRatio: 0.96,
+              scrollDirection: Axis.horizontal,
+              initialPage: 0,
+              enableInfiniteScroll: true,
+              enlargeCenterPage: true,
+            )),
+        SizedBox(height: 2.h,),
+      ],
     );
   }
 }
